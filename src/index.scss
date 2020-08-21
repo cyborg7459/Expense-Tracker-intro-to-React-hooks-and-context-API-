@@ -1,0 +1,111 @@
+body {
+  padding: 50px 0px;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  
+  background-color: #f5fafa;
+}
+
+#root {
+  width: 100vw;
+
+  .container {
+    width: 95%!important;
+    max-width: 800px!important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.section-hr {
+  background-color: #000;
+  width: 200px;
+  height: 2px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+.display-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.3);
+  text-align: center;
+  margin-bottom: 50px;
+  
+  .display-card-details {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width : 100%;
+  
+    .expense h2 {
+      color: red;
+    }
+  
+    .earning h2 {
+      color : green
+    }
+  }
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .transaction-cards {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+.transaction-card {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0px 0px;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+  overflow : hidden;
+
+  &.expense {
+    border-right: red solid 5px;
+  }
+
+  &.earning {
+    border-right: green solid 5px;
+  }
+
+  .close-btn {
+    width: 0px;
+    background-color: red;
+    color: #fff;
+    height: 60px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-60px);
+    transition : all 0.5s ease;
+    cursor: pointer;
+  }
+
+  .transaction-card-details {
+    padding: 0 20px;
+    width: 100%;
+
+    .transaction-amount {
+      float: right;
+    }
+  }
+
+  &:hover {
+    .close-btn {
+      transform: translateX(0);
+      width: 60px;
+    }
+  }
+}

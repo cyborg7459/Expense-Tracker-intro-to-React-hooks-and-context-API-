@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import DisplayCard from './components/display-card.jsx';
+import TransactionList from './components/transaction-list.jsx';
+import AddTransactionForm from './components/add-transaction-form.jsx';
+import TransactionsContextProvider from './contexts/transaction-context.js';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <h1 className='text-center display-4'>Expense tracker</h1>
+      <p className='text-center lead'>Manage all your expenses in one place</p>
+      <hr className='mb-4'/>
+      <TransactionsContextProvider>
+        <DisplayCard />
+        <TransactionList />
+        <AddTransactionForm />
+      </TransactionsContextProvider>   
     </div>
-  );
+  )
 }
 
 export default App;
